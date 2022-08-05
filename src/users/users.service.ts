@@ -14,4 +14,15 @@ export class UsersService {
     const users = await this.userModel.find()
     return users
   }
+
+  async createUser(username, email): Promise<UserDocument> {
+    const user = await this.userModel.create(
+      {
+        username,
+        email
+      }
+    )
+    return user
+
+  }
 }
