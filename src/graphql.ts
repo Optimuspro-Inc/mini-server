@@ -24,7 +24,7 @@ export abstract class IQuery {
 }
 
 export abstract class IMutation {
-    abstract createUser(input?: Nullable<CreateUserInput>): User | Promise<User>;
+    abstract createUser(userInput?: Nullable<CreateUserInput>): User | Promise<User>;
 }
 
 type Nullable<T> = T | null;

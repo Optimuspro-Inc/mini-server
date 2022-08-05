@@ -5,6 +5,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
+import { NewsletterModule } from './newsletter/newsletter.module';
 
 @Module({
   imports: [
@@ -17,11 +19,14 @@ import { UsersModule } from './users/users.module';
         path: join(process.cwd(), 'src/graphql.ts'),
         outputAs: 'class'
       },
+      // playground: false,
+      // plugins: [ApolloServerPluginLandingPageLocalDefault()],
       installSubscriptionHandlers: true,
       path: '/graphql',
       cors: false,
     }),
     UsersModule,
+    NewsletterModule,
   ]
 })
 export class AppModule {}

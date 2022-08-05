@@ -17,5 +17,5 @@ input CreateUserInput {
 
 
 type Mutation {
-  createUser(input: CreateUserInput): User!
+  createUser(userInput: CreateUserInput): User!
 }
