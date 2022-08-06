@@ -22,6 +22,7 @@ import { createFalse } from '@ts-morph/common/lib/typescript';
       },
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
+      introspection: true,
       installSubscriptionHandlers: true,
       path: '/graphql',
       cors: true,
