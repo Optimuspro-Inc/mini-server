@@ -19,7 +19,7 @@ import { NewsletterModule } from './newsletter/newsletter.module';
         path: join(process.cwd(), 'src/graphql.ts'),
         outputAs: 'class'
       },
-      // playground: false,
+      playground: true,
       // plugins: [ApolloServerPluginLandingPageLocalDefault()],
       installSubscriptionHandlers: true,
       path: '/graphql',
