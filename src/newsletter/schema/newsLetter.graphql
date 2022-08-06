@@ -1,0 +1,13 @@
+type NewsLetter {
+  email: String
+}
+
+
+type Query {
+  newsLetters: [NewsLetter!]!
+}
+
+
+type Mutation {
+  joinLetter(email: String): NewsLetter
+}
