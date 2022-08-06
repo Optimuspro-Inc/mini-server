@@ -7,6 +7,7 @@ import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { NewsletterModule } from './newsletter/newsletter.module';
+import { createFalse } from '@ts-morph/common/lib/typescript';
 
 @Module({
   imports: [
@@ -19,8 +20,8 @@ import { NewsletterModule } from './newsletter/newsletter.module';
         path: join(process.cwd(), 'src/graphql.ts'),
         outputAs: 'class'
       },
-      playground: true,
-      // plugins: [ApolloServerPluginLandingPageLocalDefault()],
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
       installSubscriptionHandlers: true,
       path: '/graphql',
       cors: false,
