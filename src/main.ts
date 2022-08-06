@@ -4,7 +4,7 @@ import * as express from 'express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   const devOrigins = [
     'http://localhost',
@@ -16,14 +16,6 @@ async function bootstrap() {
   ];
 
   const origin = devOrigins
-
-  app.enableCors(
-    {
-      origin,
-  
-      credentials: true,
-    }
-  );
 
   const PORT = process.env.PORT || 8000;
   app.use(express.json({ limit: '50mb' }));

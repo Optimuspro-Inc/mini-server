@@ -24,7 +24,7 @@ import { createFalse } from '@ts-morph/common/lib/typescript';
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       installSubscriptionHandlers: true,
       path: '/graphql',
-      cors: false,
+      cors: true,
     }),
     UsersModule,
     NewsletterModule,
